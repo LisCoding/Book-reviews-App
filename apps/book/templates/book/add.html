@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <a href="/books">Home</a>
+    <a href="#">Logout</a>
+    <h1>Add a new Book Title and a Review</h1>
+    <form class="add" action="/book_review/{{request.session.user_id}}" method="post">
+      {% csrf_token %}
+      <label for="">Book Title:</label>
+      <input type="text" name="title" value="">
+      <h3>Author</h3>
+      <label for="">Choose from the list</label>
+      <select class="" name="">
+        <option value="">Jhon</option>
+        <option value="">Liseth S</option>
+        <option value="">Hemigway</option>
+        <option value="">Tracy</option>
+      </select>
+      <label for="">Or add a new Author</label>
+      <input type="text" name="name_author" value="">
+      <label for="">Review</label>
+      <textarea name="review" value ="" rows="8" cols="80"></textarea>
+      <label for="">Rating</label>
+      <select class="" name="stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="submit" name="" value="Add Book and Review">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome, Liseth!</h1>
+      <a href="/books/add">Add Book and Review</a>
+      <a href="#">logout</a>
+    </div>
+    <div class="left-content">
+        <h1>Recent Book Reviews:</h1>
+        {%for book in books%}
+          <h2><a href="#">{{book.title}}</a></h2>
+          {% for book_review in book.uploaded_reviews.all %}
+          <p>
+            <i>{{ book_review.reviewer.first_name }}</i> : <b>{{book_review.review}}</b>
+            Posted on {{book_review.created_at}}
+            <img src="static/{{star_num}}_start.png"/>
+          </p>
+          {% endfor %}
+        {%endfor%}
+    </div>
+    <div class="rigth_content">
+      <h3>Other Books with Reviews</h3>
+      <div class="links">
+        <a href="#">ghagh</a>
+        <a href="#">ghsagh</a>
+        <a href="#"></a>
+      </div>
+    </div>
+  </body>
+</html>
